@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repurpose & Rise™ — One Episode. A Month of Content. Zero Extra Work.</title>
+<meta name="description" content="Done-for-you podcast & YouTube repurposing. One long-form episode becomes 30 days of platform-native content — in your voice, built on the ICE8 Formula™.">
+<meta property="og:title" content="Repurpose & Rise™ — One Episode. A Month of Content. Zero Extra Work.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M28.8 12.85 A14 14 0 1 0 37.2 21.2 L45 5.5' fill='none' stroke='%239C4A2B' stroke-width='3.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F5EFE6;
+  --bone-2:#EDE5D7;
+  --ivory:#FBF7F0;
+  --ink:#221B15;
+  --ink-2:#463B31;
+  --mut:#6F6355;
+  --clay:#9C4A2B;
+  --clay-deep:#7C3920;
+  --clay-soft:rgba(156,74,43,.07);
+  --brass:#96783D;
+  --brass-light:#D9C9A3;
+  --line:rgba(34,27,21,.16);
+  --line-soft:rgba(34,27,21,.08);
+  --band-text:#F5EFE6;
+  --band-mut:rgba(245,239,230,.62);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bone);color:var(--ink-2);font-family:var(--sans);font-size:16.5px;line-height:1.65;overflow-x:hidden;font-optical-sizing:auto}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);letter-spacing:-0.022em;text-wrap:balance}
+img,svg{max-width:100%}
+::selection{background:var(--clay);color:var(--ivory)}
+
+/* ---------- primitives ---------- */
+.wrap{max-width:1140px;margin:0 auto;padding:0 44px}
+section{padding:112px 0}
+.eyebrow{font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--clay);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--clay)}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{content:'';width:28px;height:1px;background:var(--clay)}
+.h2{font-size:clamp(30px,4.4vw,52px);font-weight:520;line-height:1.06;margin-bottom:20px}
+.h2 em{font-style:italic;font-weight:480;color:var(--clay)}
+.lede{font-size:17.5px;color:var(--mut);max-width:600px;line-height:1.7}
+.center{text-align:center}
+.center .lede{margin:0 auto}
+.rule{border:none;border-top:1px solid var(--line-soft);max-width:1140px;margin:0 auto}
+
+/* buttons */
+.btn{display:inline-block;background:var(--clay);color:var(--ivory);font:600 12.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;padding:18px 32px;border-radius:2px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap}
+.btn:hover{background:var(--clay-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(124,57,32,.22)}
+.btn-ghost{display:inline-block;background:transparent;color:var(--ink);font:600 12.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;padding:17px 30px;border-radius:2px;text-decoration:none;border:1px solid var(--line);cursor:pointer;transition:border-color .2s,background .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(34,27,21,.04)}
+.btn:focus-visible,.btn-ghost:focus-visible,button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.cta-note{font-size:12.5px;color:var(--mut);letter-spacing:.04em;margin-top:14px}
+
+/* ---------- nav ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(245,239,230,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.nav-in{max-width:1140px;margin:0 auto;padding:15px 44px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand svg{width:26px;height:26px;color:var(--clay);flex-shrink:0}
+.brand .wm{font-family:var(--serif);font-size:17.5px;font-weight:560;letter-spacing:-0.01em}
+.brand .wm sup{font-size:8px;color:var(--brass);letter-spacing:0}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font:500 13px var(--sans);color:var(--ink-2);text-decoration:none;letter-spacing:.02em;transition:color .15s}
+.nav-links a:hover{color:var(--clay)}
+.nav-cta{background:var(--ink);color:var(--bone);font:600 11px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--clay)}
+
+/* ---------- hero ---------- */
+.hero{padding:190px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,72px);font-weight:540;line-height:1.03;margin-bottom:26px}
+.hero h1 em{font-style:italic;font-weight:460;color:var(--clay)}
+.hero-sub{font-size:18.5px;color:var(--ink-2);max-width:540px;line-height:1.65;margin-bottom:14px}
+.hero-sub strong{color:var(--ink);font-weight:600}
+.hero-reframe{font-size:15px;color:var(--mut);max-width:520px;border-left:2px solid var(--clay);padding-left:18px;margin-bottom:38px;line-height:1.7}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-proof{display:flex;align-items:center;gap:16px;font:500 12.5px var(--sans);letter-spacing:.05em;color:var(--mut)}
+.hero-proof .dot{width:5px;height:5px;border-radius:50%;background:var(--clay)}
+.hero-proof strong{color:var(--clay);font-weight:600}
+
+/* leverage fan */
+.fan{width:100%;height:auto;display:block}
+.fan .lbl{font:600 10px var(--sans);letter-spacing:.14em;fill:var(--mut)}
+.fan .lbl-src{fill:var(--ink);font-size:10.5px}
+.fan .ray{fill:none;stroke:var(--ink);stroke-width:1.1;opacity:.34;stroke-dasharray:520;stroke-dashoffset:520;animation:draw 1.4s cubic-bezier(.5,0,.2,1) forwards}
+.fan .ray:nth-of-type(1){animation-delay:.18s}.fan .ray:nth-of-type(2){animation-delay:.3s}.fan .ray:nth-of-type(3){animation-delay:.42s}.fan .ray:nth-of-type(4){animation-delay:.54s}.fan .ray:nth-of-type(5){animation-delay:.66s}
+.fan .node{fill:var(--clay)}
+.fan .src-ring{fill:var(--ivory);stroke:var(--line)}
+.fan .bar{fill:var(--clay)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fan-tag{margin-top:10px;text-align:center;font:600 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+
+/* ---------- 1 -> 30 ---------- */
+.one30{display:flex;align-items:baseline;justify-content:center;gap:clamp(20px,5vw,56px);margin:56px 0 30px}
+.one30 .num{font-family:var(--serif);font-weight:400;font-size:clamp(96px,17vw,210px);line-height:.9;color:var(--ink);font-variant-numeric:tabular-nums}
+.one30 .num.clay{color:var(--clay);font-style:italic;font-weight:440}
+.one30 .arrow{align-self:center;color:var(--brass)}
+.one30-caps{display:flex;justify-content:center;gap:clamp(40px,12vw,150px);margin-bottom:26px}
+.one30-caps span{font:600 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.one30-line{text-align:center;font-family:var(--serif);font-size:clamp(19px,2.4vw,25px);font-style:italic;font-weight:420;color:var(--ink-2);max-width:640px;margin:0 auto}
+.one30-line em{color:var(--clay);font-style:italic}
+
+/* ---------- trap vs system ---------- */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:56px;border:1px solid var(--line-soft);border-radius:4px;overflow:hidden}
+.way{padding:44px 42px;background:var(--bone-2)}
+.way.sys{background:var(--ivory);border-left:1px solid var(--line-soft)}
+.way-label{font:600 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;margin-bottom:26px;color:var(--mut);display:flex;align-items:center;gap:10px}
+.way.sys .way-label{color:var(--clay)}
+.way-item{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;color:var(--mut);line-height:1.6;padding:11px 0;border-bottom:1px solid var(--line-soft)}
+.way-item:last-child{border-bottom:none}
+.way.sys .way-item{color:var(--ink-2)}
+.way-item .mk{flex-shrink:0;width:16px;height:16px;margin-top:3px;color:var(--mut);opacity:.55}
+.way.sys .way-item .mk{color:var(--clay);opacity:1}
+
+/* ---------- ICE8 ---------- */
+.ice-lock{text-align:center;font-family:var(--serif);font-size:clamp(18px,2.4vw,24px);font-weight:480;color:var(--ink);margin:8px 0 52px}
+.ice-lock span{color:var(--clay)}
+.ice-lock .tm{font-size:.55em;vertical-align:super;color:var(--brass)}
+.ice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ice-card{background:var(--ivory);border:1px solid var(--line-soft);border-radius:4px;padding:34px 26px;transition:transform .25s,border-color .25s}
+.ice-card:hover{transform:translateY(-4px);border-color:var(--clay)}
+.ice-card .letter{font-family:var(--serif);font-size:58px;font-weight:420;font-style:italic;color:var(--clay);line-height:1;margin-bottom:18px}
+.ice-card h3{font-size:15.5px;font-family:var(--sans);font-weight:600;letter-spacing:.01em;margin-bottom:8px}
+.ice-card p{font-size:13.5px;color:var(--mut);line-height:1.65}
+
+/* ---------- dark bands ---------- */
+.band{background:var(--ink);color:var(--band-text)}
+.band .h2,.band h3{color:var(--band-text)}
+.band .h2 em{color:var(--brass-light)}
+.band .lede{color:var(--band-mut)}
+.band .eyebrow{color:var(--brass-light)}
+.band .eyebrow::before,.band .eyebrow.center::after{background:var(--brass-light)}
+
+/* stat band */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:60px 0 56px;border-top:1px solid rgba(245,239,230,.14);border-bottom:1px solid rgba(245,239,230,.14)}
+.stat{padding:36px 20px;text-align:center;border-left:1px solid rgba(245,239,230,.14)}
+.stat:first-child{border-left:none}
+.stat .n{font-family:var(--serif);font-size:clamp(34px,4vw,50px);font-weight:440;color:var(--brass-light);line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font:600 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--band-mut);margin-top:12px;line-height:1.6}
+.case{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.case p{color:var(--band-mut);font-size:15.5px;line-height:1.75;margin-bottom:18px}
+.case p strong{color:var(--band-text);font-weight:600}
+.case-quote{border-left:2px solid var(--brass);padding-left:20px;font-family:var(--serif);font-style:italic;font-size:19px;font-weight:420;color:var(--band-text);line-height:1.55}
+.case-quote .who{display:block;margin-top:12px;font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);font-style:normal}
+
+/* ---------- testimonials ---------- */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.testi{background:var(--ivory);border:1px solid var(--line-soft);border-radius:4px;padding:32px 28px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.testi:hover{transform:translateY(-3px);border-color:var(--line)}
+.testi q{font-family:var(--serif);font-style:italic;font-size:16.5px;font-weight:440;color:var(--ink);line-height:1.55;quotes:'“' '”';display:block;margin-bottom:16px}
+.testi .ctx{font-size:13px;color:var(--mut);line-height:1.65;flex:1;margin-bottom:22px}
+.testi .who{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--line-soft);padding-top:16px}
+.testi .who b{font:600 13.5px var(--sans);color:var(--ink)}
+.testi .who span{font:500 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+
+/* ---------- calculator ---------- */
+.calc{background:var(--ivory);border:1px solid var(--line);border-radius:6px;padding:48px;max-width:900px;margin:56px auto 0;box-shadow:0 24px 70px -30px rgba(34,27,21,.18)}
+.ctabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.ctab{position:relative;padding:16px 10px 13px;border-radius:3px;border:1px solid var(--line);background:var(--bone);cursor:pointer;font:600 13.5px var(--sans);color:var(--mut);text-align:center;transition:all .18s}
+.ctab:hover{border-color:var(--ink)}
+.ctab .pr{display:block;font:500 12px var(--sans);letter-spacing:.06em;margin-top:4px;opacity:.75;font-variant-numeric:tabular-nums}
+.ctab-active{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.csave-badge{position:absolute;top:-9px;right:10px;background:var(--brass);color:var(--ivory);font:600 9px var(--sans);letter-spacing:.06em;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.cwyg{background:var(--bone-2);border-radius:3px;padding:12px 16px;margin-bottom:22px;display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.cwyg-pill{font:600 10px var(--sans);letter-spacing:.1em;text-transform:uppercase;background:var(--clay);color:var(--ivory);padding:5px 13px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+#cwyg-items{display:flex;gap:14px;flex-wrap:wrap}
+.chip{font:500 12.5px var(--sans);color:var(--mut);display:flex;align-items:center;gap:6px}
+.chip::before{content:'→';color:var(--clay);font-size:11px}
+.cinputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.cig{background:var(--bone);border:1px solid var(--line-soft);border-radius:3px;padding:16px 18px}
+.cig-label{font:600 10.5px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:5px}
+.cig-label .cv{color:var(--ink);font-size:12px;letter-spacing:.04em}
+.cig-hint{font-size:12px;color:var(--mut);line-height:1.5;margin-bottom:10px;font-style:italic}
+.cnum{width:100%;background:transparent;border:none;font:600 21px var(--sans);color:var(--ink);outline:none;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--clay);cursor:pointer;margin-top:6px;height:22px}
+.cstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+.cstat{background:var(--bone);border:1px solid var(--line-soft);border-radius:3px;padding:16px}
+.cstat-label{font:600 9.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:8px;line-height:1.5}
+.cstat-val{font-family:var(--serif);font-size:24px;font-weight:520;color:var(--ink);display:block;line-height:1.1;font-variant-numeric:tabular-nums}
+.cstat-green{color:var(--clay)}
+.cstat-gold{color:var(--brass)}
+.cstat-range{font:500 11px var(--sans);color:var(--mut);display:block;margin-top:6px;line-height:1.45}
+.csec{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.csec b{font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--clay);white-space:nowrap}
+.csec .ln{flex:1;height:1px;background:var(--line)}
+.csec span{font:500 11px var(--sans);color:var(--mut);white-space:nowrap}
+.cpanel{background:var(--bone);border:1px solid var(--line-soft);border-radius:4px;padding:24px;margin-bottom:22px}
+.cpanel-t{font:600 14px var(--sans);color:var(--ink);margin-bottom:4px}
+.cmeter-sub{font-size:13px;color:var(--mut);font-style:italic;margin-bottom:20px;line-height:1.55}
+.cmrow{margin-bottom:14px}
+.cmrow:last-child{margin-bottom:0}
+.cmrow-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;gap:8px}
+.cemotion{font:500 13px var(--sans);color:var(--ink-2)}
+.cpct{font:600 11px var(--sans);letter-spacing:.04em;color:var(--clay);white-space:nowrap;font-variant-numeric:tabular-nums}
+.cmquote{font-size:12px;color:var(--mut);font-style:italic;margin-top:5px;line-height:1.5}
+.cbtrack{height:5px;background:var(--bone-2);border-radius:4px;overflow:hidden}
+.cbfill{height:100%;border-radius:4px;background:var(--clay);transition:width .7s cubic-bezier(.4,0,.2,1)}
+.cbfill-gold{background:var(--brass)}
+.cbfill-burg{background:var(--ink)}
+.ctable{background:var(--bone);border:1px solid var(--line-soft);border-radius:4px;overflow:hidden;margin-bottom:28px}
+.ctable-sec{padding:20px 24px;border-bottom:1px solid var(--line-soft)}
+.ctable-sec:last-child{border-bottom:none}
+.ctable-cap{font:600 9.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:12px}
+.croi-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.croi-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.croi-item{background:var(--bone-2);border-radius:3px;padding:13px 15px}
+.croi-label{font:600 9.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:6px;line-height:1.4}
+.croi-val{font-family:var(--serif);font-size:19px;font-weight:520;color:var(--ink);display:block;margin-bottom:3px;font-variant-numeric:tabular-nums}
+.croi-sub{font:500 11px var(--sans);color:var(--mut);line-height:1.45;display:block}
+.crelief{font-size:14px;color:var(--ink-2);font-style:italic;line-height:1.65}
+.calc-cta{text-align:center}
+.calc-fine{font:500 11.5px var(--sans);color:var(--mut);margin-top:14px}
+
+/* ---------- compounding ---------- */
+.comp-svg{display:block;width:100%;height:auto;margin-top:52px}
+.comp-svg .axis{stroke:var(--line);stroke-width:1}
+.comp-svg .tick{font:600 10px var(--sans);letter-spacing:.1em;fill:var(--mut)}
+.comp-svg .tread{fill:none;stroke:var(--mut);stroke-width:1.4;opacity:.55}
+.comp-svg .grow{fill:none;stroke:var(--clay);stroke-width:2.2}
+.comp-svg .grow-dash{fill:none;stroke:var(--clay);stroke-width:2.2;stroke-dasharray:3 7;stroke-linecap:round}
+.comp-svg .fill{fill:var(--clay);opacity:.06}
+.comp-svg .anno{font:600 10.5px var(--sans);letter-spacing:.12em;fill:var(--clay)}
+.comp-svg .anno-m{font:600 10.5px var(--sans);letter-spacing:.12em;fill:var(--mut)}
+.why-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px}
+.why{border-top:2px solid var(--clay);padding-top:18px}
+.why b{display:block;font:600 14.5px var(--sans);color:var(--ink);margin-bottom:6px}
+.why p{font-size:13.5px;color:var(--mut);line-height:1.65}
+
+/* ---------- pricing ---------- */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:60px 0 26px;align-items:start}
+.price{background:var(--ivory);border:1px solid var(--line-soft);border-radius:4px;padding:38px 30px;position:relative;transition:transform .25s,box-shadow .25s}
+.price:hover{transform:translateY(-4px)}
+.price.featured{border-color:var(--clay);box-shadow:0 24px 60px -28px rgba(124,57,32,.3)}
+.price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--clay);color:var(--ivory);font:600 10px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap}
+.price-tier{font:600 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
+.price-title{font-family:var(--serif);font-size:22px;font-weight:540;color:var(--ink);margin-bottom:8px}
+.price-desc{font-size:13px;color:var(--mut);margin-bottom:26px;line-height:1.6}
+.price-orig{font:500 13px var(--sans);color:var(--mut);text-decoration:line-through;margin-bottom:2px;font-variant-numeric:tabular-nums}
+.price-amount{font-family:var(--serif);font-size:52px;font-weight:480;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+.price-amount sup{font-size:22px;vertical-align:top;margin-top:8px;display:inline-block;color:var(--mut)}
+.price-save{font:600 11.5px var(--sans);letter-spacing:.04em;color:var(--brass);margin:8px 0 20px}
+.price-delivery{font:500 12px var(--sans);letter-spacing:.05em;color:var(--mut);border-top:1px solid var(--line-soft);padding-top:18px;margin-bottom:18px}
+.price-list{list-style:none;margin-bottom:30px}
+.price-list li{font-size:13px;color:var(--ink-2);padding:8px 0;border-bottom:1px solid var(--line-soft);display:flex;gap:10px;line-height:1.5}
+.price-list li::before{content:'→';color:var(--clay);flex-shrink:0}
+.price .btn,.price .btn-ghost{width:100%;text-align:center;padding-left:0;padding-right:0}
+.prices-fine{text-align:center;font:500 12px var(--sans);color:var(--mut)}
+
+/* ---------- vision ---------- */
+.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:56px}
+.vis{background:var(--ivory);border:1px solid var(--line-soft);border-radius:4px;padding:30px 30px 28px}
+.vis b{display:block;font-family:var(--serif);font-size:18.5px;font-weight:540;color:var(--ink);margin-bottom:8px}
+.vis p{font-size:14px;color:var(--mut);line-height:1.7}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start}
+.about p{font-size:15px;line-height:1.8;color:var(--ink-2);margin-bottom:16px}
+.about p em{color:var(--clay)}
+.badge{background:var(--ivory);border:1px solid var(--line-soft);border-radius:4px;padding:16px 18px;display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.badge svg{flex-shrink:0;color:var(--brass)}
+.badge b{font-family:var(--serif);font-size:14.5px;font-weight:560;color:var(--ink);display:block}
+.badge span{font:500 10.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.mini-stats{display:flex;gap:10px;margin-top:18px}
+.mini{flex:1;background:var(--ivory);border:1px solid var(--line-soft);border-radius:4px;padding:14px 10px;text-align:center}
+.mini b{font-family:var(--serif);font-size:21px;font-weight:520;color:var(--clay);display:block;font-variant-numeric:tabular-nums}
+.mini span{font:600 9px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.secret{margin-top:18px;border-left:2px solid var(--brass);padding:4px 0 4px 18px}
+.secret p{font-family:var(--serif);font-style:italic;font-size:15.5px;color:var(--ink);line-height:1.6;margin:0}
+.secret span{font:600 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:760px;margin:48px auto 0}
+.faq-item{border-bottom:1px solid var(--line-soft)}
+.faq-q{width:100%;background:none;border:none;text-align:left;font:600 16px var(--sans);color:var(--ink);padding:26px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq-q .arrow{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--clay);flex-shrink:0;transition:transform .25s;line-height:1}
+.faq-a{display:none;padding-bottom:28px;font-size:14.5px;color:var(--mut);line-height:1.8;max-width:660px}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .arrow{transform:rotate(45deg)}
+
+/* ---------- final ---------- */
+.final{text-align:center;padding:130px 0}
+.final .h2{font-size:clamp(34px,5vw,62px)}
+.final .spots{display:inline-block;font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);border:1px solid rgba(245,239,230,.25);padding:9px 20px;border-radius:20px;margin-bottom:34px}
+.final .lede{margin:0 auto 44px}
+.final .note{font:500 12px var(--sans);letter-spacing:.06em;color:var(--band-mut);margin-top:18px}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);border-top:1px solid rgba(245,239,230,.1);padding:36px 0}
+.foot{max-width:1140px;margin:0 auto;padding:0 44px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot .brand{color:var(--band-text)}
+.foot .brand svg{color:var(--brass-light)}
+.foot-links{display:flex;gap:24px}
+.foot-links a{font:500 12.5px var(--sans);color:var(--band-mut);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--band-text)}
+.foot-note{font:500 11.5px var(--sans);color:rgba(245,239,230,.4);letter-spacing:.03em}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.visible{opacity:1;transform:translateY(0)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .rv{opacity:1;transform:none}
+  .fan .ray{stroke-dashoffset:0}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .ice-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{border-left:none;border-top:1px solid rgba(245,239,230,.14)}
+  .stat:nth-child(-n+2){border-top:none}
+  .case{grid-template-columns:1fr;gap:36px}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+  .prices{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .nav-links a:not(.nav-cta){display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 22px}
+  section{padding:76px 0}
+  .btn,.btn-ghost{white-space:normal;text-align:center}
+  .csec{flex-wrap:wrap}
+  .csec span{white-space:normal}
+  .hero{padding:150px 0 64px}
+  .nav-in{padding:13px 22px}
+  .ways{grid-template-columns:1fr}
+  .way.sys{border-left:none;border-top:1px solid var(--line-soft)}
+  .ice-grid,.testi-grid,.vision-grid,.cinputs,.cstats,.why-strip{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat{border-top:1px solid rgba(245,239,230,.14)}
+  .stat:first-child{border-top:none}
+  .calc{padding:26px 18px}
+  .ctabs{grid-template-columns:1fr}
+  .croi-grid4,.croi-grid3{grid-template-columns:1fr 1fr}
+  .mini-stats{flex-wrap:wrap}
+  .foot{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-in">
+    <a href="#" class="brand" aria-label="Repurpose & Rise home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M28.8 12.85 A14 14 0 1 0 37.2 21.2 L45 5.5" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/></svg>
+      <span class="wm">Repurpose &amp; Rise<sup>™</sup></span>
+    </a>
+    <div class="nav-links">
+      <a href="#method">Method</a>
+      <a href="#proof">Proof</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Done-for-you repurposing · for coaches, consultants &amp; course creators</p>
+      <h1>You Spent Hours on That Episode. It Got Heard Once. <em>Then It Died.</em></h1>
+      <p class="hero-sub">I turn one long-form episode into <strong>30 days of platform-native content</strong> — in your voice, built from work you've already done.</p>
+      <p class="hero-reframe">You don't need to create more. You need to extract more from what you already made. That's not a time problem — it's a leverage problem. And leverage can be hired.</p>
+      <div class="hero-btns">
+        <a href="#calculator" class="btn">See What Your Catalog Is Worth</a>
+        <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn-ghost">Book the Call</a>
+      </div>
+      <p class="hero-proof"><strong>1–2 clients a month.</strong><span class="dot" aria-hidden="true"></span><span>One spot currently open</span></p>
+    </div>
+    <div>
+      <svg class="fan" viewBox="0 0 460 360" role="img" aria-label="Diagram: one episode fanning out into LinkedIn, Instagram, YouTube, email, and search content">
+        <path class="ray" d="M92 180 C 190 180, 240 48, 356 48"/>
+        <path class="ray" d="M92 180 C 190 180, 240 114, 356 114"/>
+        <path class="ray" d="M92 180 C 190 180, 240 180, 356 180"/>
+        <path class="ray" d="M92 180 C 190 180, 240 246, 356 246"/>
+        <path class="ray" d="M92 180 C 190 180, 240 312, 356 312"/>
+        <circle class="src-ring" cx="60" cy="180" r="32"/>
+        <g aria-hidden="true">
+          <rect class="bar" x="48" y="172" width="2.5" height="16" rx="1.2"/>
+          <rect class="bar" x="54" y="164" width="2.5" height="32" rx="1.2"/>
+          <rect class="bar" x="60" y="170" width="2.5" height="20" rx="1.2"/>
+          <rect class="bar" x="66" y="160" width="2.5" height="40" rx="1.2"/>
+          <rect class="bar" x="72" y="173" width="2.5" height="14" rx="1.2"/>
+        </g>
+        <text class="lbl lbl-src" x="60" y="236" text-anchor="middle">ONE EPISODE</text>
+        <circle class="node" cx="356" cy="48" r="4"/><text class="lbl" x="370" y="52">LINKEDIN</text>
+        <circle class="node" cx="356" cy="114" r="4"/><text class="lbl" x="370" y="118">INSTAGRAM</text>
+        <circle class="node" cx="356" cy="180" r="4"/><text class="lbl" x="370" y="184">YOUTUBE</text>
+        <circle class="node" cx="356" cy="246" r="4"/><text class="lbl" x="370" y="250">EMAIL</text>
+        <circle class="node" cx="356" cy="312" r="4"/><text class="lbl" x="370" y="316">SEARCH</text>
+      </svg>
+      <p class="fan-tag">One recording · thirty finished assets</p>
+    </div>
+  </div>
+</header>
+
+<hr class="rule">
+
+<!-- ═══════ REFRAME + 1→30 ═══════ -->
+<section class="rv">
+  <div class="wrap center">
+    <p class="eyebrow center">The Reframe</p>
+    <h2 class="h2">You Don't Have a Content Problem.<br>You Have a <em>Leverage</em> Problem.</h2>
+    <p class="lede">More hours won't fix it. More posting won't fix it. Extraction fixes it.</p>
+    <div class="one30" aria-label="One episode becomes thirty days of content">
+      <span class="num">1</span>
+      <svg class="arrow" width="90" height="24" viewBox="0 0 90 24" aria-hidden="true"><path d="M2 12h80m0 0-10-8m10 8-10 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="num clay" id="count30" data-count="30">30</span>
+    </div>
+    <div class="one30-caps"><span>Episode</span><span>Days of content</span></div>
+    <p class="one30-line">Your best thinking already happened — on the mic. <em>The work isn't making more. It's finishing what you started.</em></p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ TRAP VS SYSTEM ═══════ -->
+<section class="rv">
+  <div class="wrap">
+    <p class="eyebrow">The Trap vs. The System</p>
+    <h2 class="h2">The Experts You Envy Don't Post More.<br><em>They Extract More.</em></h2>
+    <p class="lede">Hormozi, Cattoni, Contrarian Thinking — the playbook is identical at every scale: long-form in, everywhere out. Here's the difference between what you've been told and what actually works.</p>
+    <div class="ways">
+      <div class="way">
+        <p class="way-label">The Content Treadmill</p>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Show up every day or the algorithm punishes you</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Write your own captions — burn 8–35 hours a week doing it</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Post one clip per episode and watch it vanish in 24 hours</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Stay on one platform and hope your audience finds you</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Treat every episode as one piece of content — used once</div>
+      </div>
+      <div class="way sys">
+        <p class="way-label">The Distribution System</p>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Record your episode. Hand it over. That's your entire job.</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>30 posts per episode — delivered in 10 days, ready to schedule</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>One episode reaches 3 platforms and 4 audience segments at once</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Each post meets a different version of your ideal client where she is</div>
+        <div class="way-item"><svg class="mk" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Your back catalog becomes a lead engine, not an archive</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ ICE8 ═══════ -->
+<section id="method" class="rv">
+  <div class="wrap center">
+    <p class="eyebrow center">The Method</p>
+    <h2 class="h2">The Judgment a Cheap VA — <em>or a Prompt</em> — Can't Fake.</h2>
+    <p class="lede">Repurposing isn't clipping. Every episode is mapped through the ICE8 Formula™ so each post has a job: positioning you, clarifying you, and moving one more buyer toward yes.</p>
+    <p class="ice-lock"><span>I</span>dentity Positioning &nbsp;·&nbsp; <span>C</span>larity &nbsp;·&nbsp; <span>E</span>vergreen Architecture &nbsp;·&nbsp; <span>8</span> Market Gaps <span class="tm">ICE8™</span></p>
+    <div class="ice-grid">
+      <div class="ice-card"><div class="letter">I</div><h3>Identity Positioning</h3><p>Your POV, your voice, your frameworks — every post reinforces why you're the only guide your audience needs.</p></div>
+      <div class="ice-card"><div class="letter">C</div><h3>Clarity Bridge</h3><p>Complex ideas stripped to their sharpest form. No jargon, no fluff — the insight that lands in eight seconds.</p></div>
+      <div class="ice-card"><div class="letter">E</div><h3>Evergreen Architecture</h3><p>Content built to rank and resurface — on YouTube, LinkedIn, and AI search — long after you hit publish.</p></div>
+      <div class="ice-card"><div class="letter">8</div><h3>8 Market Gaps</h3><p>Each episode mapped across the gaps that move buyers: emotion, beliefs, desires, context, questions, frameworks, trust.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROOF BAND ═══════ -->
+<section id="proof" class="band">
+  <div class="wrap rv">
+    <p class="eyebrow">Proof, Not Promises</p>
+    <h2 class="h2">4,100 Opt-Ins. £1.72 a Lead. <em>From Episodes She'd Already Recorded.</em></h2>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="4100" data-suffix="+">4,100+</div><div class="l">Opt-ins generated</div></div>
+      <div class="stat"><div class="n" data-count="39">39</div><div class="l">Leads in 48 hours</div></div>
+      <div class="stat"><div class="n">£1.72</div><div class="l">Cost per lead</div></div>
+      <div class="stat"><div class="n" data-count="7">7</div><div class="l">Sales in 4 days</div></div>
+    </div>
+    <div class="case">
+      <div>
+        <p><strong>Lu Levy already had a 7-figure business in Brazil.</strong> Then she started from scratch — new country, new language — and quietly built <strong>$1M with just 3,500 subscribers.</strong></p>
+        <p>One weekly long-form video, turned into 30+ pieces of weekly content. Her email list grew 7–15 sign-ups a day. No viral moments. No ads. No posting every day herself. She could even step away for months — and come back to a bigger list than she left.</p>
+        <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn" style="margin-top:10px">I Want These Results</a>
+      </div>
+      <div class="case-quote">
+        The right content reaching the right people, every day — from recordings that already existed.
+        <span class="who">Client case study · Lu Levy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<section class="rv">
+  <div class="wrap">
+    <p class="eyebrow">From People Who Were Skeptical First</p>
+    <h2 class="h2">"I Was Worried It Wouldn't Sound Like Me."<br><em>It Sounded Better.</em></h2>
+    <p class="lede">The most common worry before someone hires me — and the first thing they retract when the work lands.</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <q>I was smiling as I was reading cause I can tell you did your research. You definitely used my words and I appreciate that a great deal.</q>
+        <p class="ctx">Deep research, voice matching — she felt heard in her own copy.</p>
+        <div class="who"><b>Melinda Miné</b><span>Email sequence</span></div>
+      </div>
+      <div class="testi">
+        <q>Super excited!!! It is awesome! I really can't begin to express how happy I am with my new gorgeous website!</q>
+        <p class="ctx">Six sites on six platforms before this one. "I wish I had started with you all those years ago."</p>
+        <div class="who"><b>Contessa Akin</b><span>Website copy</span></div>
+      </div>
+      <div class="testi">
+        <q>This is absolutely amazing!!! You nailed it!! Send me info on your services and how I can use you in the future.</q>
+        <p class="ctx">A welcome sequence so on-voice he asked for the full services list within the hour.</p>
+        <div class="who"><b>M. Everett Davis</b><span>Email funnel</span></div>
+      </div>
+      <div class="testi">
+        <q>Kind of makes me want to cry, lol. I forgot I had written about all those things and you have brought them all back in such a great way!</q>
+        <p class="ctx">Her own ideas, extracted and returned — sharper than she remembered them.</p>
+        <div class="who"><b>Email Copy Client</b><span>Coaching business</span></div>
+      </div>
+      <div class="testi">
+        <q>Conversions are up so far. New landing page got 7 sales so far. It's only been 4 days. Much better than our previous one.</q>
+        <p class="ctx">Paid ads funnel. Broke even in two weeks — then raised the ad spend.</p>
+        <div class="who"><b>Paid Ads Client</b><span>Lead gen funnel</span></div>
+      </div>
+      <div class="testi">
+        <q>She's my best kept secret @Fatama Zohora — I try to hide her from the world but I just can't.</q>
+        <p class="ctx">Funnel and email copy for a marketing agency. The secret didn't stay secret.</p>
+        <div class="who"><b>Marketing Agency Client</b><span>Funnel &amp; email copy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ ROI CALCULATOR ═══════ -->
+<section id="calculator" class="rv">
+  <div class="wrap center">
+    <p class="eyebrow center">Do the Math</p>
+    <h2 class="h2">See What Your Back Catalog<br>Is <em>Actually Worth.</em></h2>
+    <p class="lede">Four numbers. Adjust them, and watch what one properly extracted episode returns — and what staying invisible costs you every month.</p>
+  </div>
+  <div class="wrap">
+    <div class="calc">
+      <div class="ctabs" role="group" aria-label="Choose a package size">
+        <button type="button" class="ctab ctab-active" id="ct0" onclick="cSetTier(0)" aria-pressed="true">1 Episode<span class="pr">$850</span></button>
+        <button type="button" class="ctab" id="ct1" onclick="cSetTier(1)" aria-pressed="false"><span class="csave-badge">save $1,500</span>5 Episodes<span class="pr">$3,750</span></button>
+        <button type="button" class="ctab" id="ct2" onclick="cSetTier(2)" aria-pressed="false"><span class="csave-badge">save $3,750</span>10 Episodes<span class="pr">$6,750</span></button>
+      </div>
+      <div class="cwyg">
+        <span class="cwyg-pill" id="cwyg-posts">30 posts ready to publish</span>
+        <div id="cwyg-items"></div>
+      </div>
+      <div class="cinputs">
+        <div class="cig">
+          <label class="cig-label" for="crate">Your hourly rate ($)</label>
+          <p class="cig-hint">Not sure? Divide monthly revenue by hours worked — e.g. $10K ÷ 80hrs = $125/hr.</p>
+          <input type="number" class="cnum" id="crate" value="150" min="50" max="2000" oninput="cCalc()">
+        </div>
+        <div class="cig">
+          <label class="cig-label" for="coffer">Your main offer price ($)</label>
+          <p class="cig-hint">The offer you most want to sell — coaching package, course, retainer, or VIP day.</p>
+          <input type="number" class="cnum" id="coffer" value="3000" min="500" max="50000" oninput="cCalc()">
+        </div>
+        <div class="cig">
+          <label class="cig-label" for="chrs">Time on content per week — <span class="cv"><span id="chval">10</span>h</span></label>
+          <p class="cig-hint">Captions, clips, planning posts — all of it.</p>
+          <input type="range" min="2" max="35" value="10" step="1" id="chrs" oninput="document.getElementById('chval').textContent=this.value;cCalc()">
+        </div>
+        <div class="cig">
+          <label class="cig-label" for="cconv">Conversion rate — <span class="cv"><span id="ccval">2.0</span>%</span></label>
+          <p class="cig-hint">Industry standard is 1–3%. Warm audiences convert at 2–5%. Start conservative.</p>
+          <input type="range" min="0.5" max="5" value="2" step="0.5" id="cconv" oninput="document.getElementById('ccval').textContent=parseFloat(this.value).toFixed(1);cCalc()">
+        </div>
+      </div>
+      <div class="cstats">
+        <div class="cstat"><span class="cstat-label">Posts delivered</span><span class="cstat-val cstat-green" id="cs-posts">30</span></div>
+        <div class="cstat"><span class="cstat-label">Hours you saved</span><span class="cstat-val cstat-green" id="cs-hrs">43h</span><span class="cstat-range" id="cs-hrs-r">across 1.5 weeks</span></div>
+        <div class="cstat"><span class="cstat-label">Money not wasted DIYing</span><span class="cstat-val cstat-gold" id="cs-timeval">$6,450</span></div>
+        <div class="cstat"><span class="cstat-label">Potential new leads</span><span class="cstat-val cstat-green" id="cs-leads">150</span><span class="cstat-range" id="cs-leads-r">est. range: 105–195</span></div>
+        <div class="cstat"><span class="cstat-label">Potential new clients</span><span class="cstat-val cstat-green" id="cs-buyers">1–3</span><span class="cstat-range" id="cs-buyers-r">at 0.5–2.0% conversion</span></div>
+        <div class="cstat"><span class="cstat-label">Money in your bank</span><span class="cstat-val cstat-gold" id="cs-rev">$3K–$9K</span><span class="cstat-range" id="cs-rev-r">conservative to your chosen rate</span></div>
+      </div>
+      <div class="csec"><b>The Invisible Load Index™</b><span class="ln"></span><span>what lifts the moment you hand it over</span></div>
+      <div class="cpanel">
+        <p class="cpanel-t">Your <span id="ctier-name">1-episode</span> relief forecast</p>
+        <p class="cmeter-sub" id="cmeter-sub">"I've recorded the episode. I know it's good. And now it's just going to disappear into the feed."</p>
+        <div class="cmrow"><div class="cmrow-head"><span class="cemotion">Invisible-expert syndrome</span><span class="cpct" id="cp1">0% lifted</span></div><div class="cbtrack"><div class="cbfill" id="cb1" style="width:0%"></div></div><div class="cmquote" id="cq1"></div></div>
+        <div class="cmrow"><div class="cmrow-head"><span class="cemotion">Revenue leaking to inaction</span><span class="cpct" id="cp2">0% lifted</span></div><div class="cbtrack"><div class="cbfill cbfill-gold" id="cb2" style="width:0%"></div></div><div class="cmquote" id="cq2"></div></div>
+        <div class="cmrow"><div class="cmrow-head"><span class="cemotion">Making impact through influence</span><span class="cpct" id="cp3">0% lifted</span></div><div class="cbtrack"><div class="cbfill cbfill-burg" id="cb3" style="width:0%"></div></div><div class="cmquote" id="cq3"></div></div>
+      </div>
+      <div class="csec"><b>What you're actually getting</b><span class="ln"></span></div>
+      <div class="ctable">
+        <div class="ctable-sec">
+          <span class="ctable-cap">What you're buying today</span>
+          <div class="croi-grid4">
+            <div class="croi-item"><span class="croi-label">Investment</span><span class="croi-val" id="crb-cost">$850</span></div>
+            <div class="croi-item"><span class="croi-label">Delivered in</span><span class="croi-val" id="crb-delivery">10 days</span></div>
+            <div class="croi-item"><span class="croi-label">Your time commitment</span><span class="croi-val">~2 hrs feedback</span></div>
+            <div class="croi-item"><span class="croi-label">Posts handed back</span><span class="croi-val" id="crb-posts">30 posts</span></div>
+          </div>
+        </div>
+        <div class="ctable-sec">
+          <span class="ctable-cap">What you feel in the short term</span>
+          <p class="crelief" id="crelief-stmt"></p>
+        </div>
+        <div class="ctable-sec">
+          <span class="ctable-cap">What you gain in 6 months</span>
+          <div class="croi-grid3">
+            <div class="croi-item"><span class="croi-label">Return on investment</span><span class="croi-val cstat-gold" id="cr6-roi">$14,650</span><span class="croi-sub" id="cr6-roipct">17× your investment back</span></div>
+            <div class="croi-item"><span class="croi-label">Hours saved + dollar value</span><span class="croi-val cstat-green" id="cr6-hrs">258 hours</span><span class="croi-sub" id="cr6-hrssub">freed over 6 months</span></div>
+            <div class="croi-item"><span class="croi-label">Leads + lifetime value</span><span class="croi-val cstat-gold" id="cr6-ltv">900 leads</span><span class="croi-sub" id="cr6-ltvsub">worth up to $X at lifetime value</span></div>
+            <div class="croi-item" style="grid-column:1/-1"><span class="croi-label">Content compounding effect</span><span class="croi-val cstat-green" id="cr6-compound">180+ posts</span><span class="croi-sub" id="cr6-compoundsub">still ranking, circulating &amp; finding new people after month 6</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-cta">
+        <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn">I Want This Return — Book a Call</a>
+        <p class="calc-fine">*Estimates based on typical client results. Individual outcomes vary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ COMPOUNDING ═══════ -->
+<section class="rv">
+  <div class="wrap">
+    <p class="eyebrow">The Long Game</p>
+    <h2 class="h2">Month 6 Is Where It <em>Gets Unfair.</em></h2>
+    <p class="lede">Treadmill content dies in 24 hours and starts over from zero. Extracted content keeps ranking, resurfacing, and selling — long after you've stopped thinking about it.</p>
+    <svg class="comp-svg" viewBox="0 0 660 300" role="img" aria-label="Chart: manual posting resets to zero repeatedly while a repurposed catalog compounds upward, continuing past month six">
+      <path class="fill" d="M40 246 C180 240 300 215 412 160 C470 132 540 96 620 66 L620 250 L40 250 Z"/>
+      <line class="axis" x1="40" y1="250" x2="620" y2="250"/>
+      <path class="tread" d="M40 250 L84 224 L118 213 L124 250 L188 250 L230 221 L258 212 L264 250 L336 250 L374 223 L380 250 L620 250"/>
+      <path class="grow" d="M40 246 C180 240 300 215 412 160"/>
+      <path class="grow-dash" d="M412 160 C470 132 540 96 620 66"/>
+      <circle cx="412" cy="160" r="5" fill="var(--clay)"/>
+      <text class="anno" x="404" y="128" text-anchor="end">MONTH 6 — DELIVERY ENDS, CONTENT DOESN'T</text>
+      <text class="anno" x="620" y="52" text-anchor="end">YOUR CATALOG, COMPOUNDING</text>
+      <text class="anno-m" x="336" y="272" text-anchor="middle">POSTING MANUALLY — STARTS OVER EVERY TIME YOU STOP</text>
+      <g class="tick"><text x="40" y="292">M1</text><text x="136" y="292">M2</text><text x="232" y="292">M3</text><text x="328" y="292">M4</text><text x="424" y="292" fill="var(--clay)">M6</text><text x="600" y="292">M9</text></g>
+    </svg>
+    <div class="why-strip">
+      <div class="why"><b>Post-production is the discipline.</b><p>Recording the episode is the beginning, not the end. The experts everyone knows treat every episode as raw material — and finish it.</p></div>
+      <div class="why"><b>One idea, four audiences.</b><p>The same insight, reframed for the LinkedIn executive, the Instagram creative, the YouTube learner, and your email list — without recording one extra word.</p></div>
+      <div class="why"><b>Today's posts are tomorrow's AI answers.</b><p>When someone asks an AI who to follow in your niche, the answer is built from the content corpus that exists today. Be in it.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ PRICING ═══════ -->
+<section id="pricing" class="rv">
+  <div class="wrap center">
+    <p class="eyebrow center">The Investment</p>
+    <h2 class="h2">Hand Me Your Episodes.<br><em>I'll Handle the Rest.</em></h2>
+    <p class="lede">No retainers. No ongoing fees. One flat investment — your episodes in, a full content system out.</p>
+  </div>
+  <div class="wrap">
+    <div class="prices">
+      <div class="price">
+        <p class="price-tier">Proof of Concept</p>
+        <p class="price-title">The Test Drive</p>
+        <p class="price-desc">One episode. 30 posts. See exactly what this feels like before committing to more.</p>
+        <p class="price-orig">$1,050</p>
+        <p class="price-amount"><sup>$</sup>850</p>
+        <p class="price-save">You save $200</p>
+        <p class="price-delivery">In your hands: 10 days</p>
+        <ul class="price-list">
+          <li>30 posts engineered from 1 episode</li>
+          <li>Your primary platform + one secondary</li>
+          <li>Written in your voice — reviewed once, then done</li>
+          <li>Formatted, captioned, scheduling-ready</li>
+        </ul>
+        <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn-ghost">Start With One Episode</a>
+      </div>
+      <div class="price featured">
+        <p class="price-badge">Most Booked</p>
+        <p class="price-tier">The Real System</p>
+        <p class="price-title">5-Episode Engine</p>
+        <p class="price-desc">Where the compounding starts. Four months of content built from your five best episodes.</p>
+        <p class="price-orig">$5,250</p>
+        <p class="price-amount"><sup>$</sup>3,750</p>
+        <p class="price-save">You save $1,500 — 28% off</p>
+        <p class="price-delivery">In your hands: 4 weeks</p>
+        <ul class="price-list">
+          <li>150 posts across 5 episodes</li>
+          <li>3-platform distribution strategy</li>
+          <li>Full scheduling calendar with posting notes</li>
+          <li>Hooks tested against your niche's top content</li>
+          <li>Newsletter draft for every episode</li>
+        </ul>
+        <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn">Build My Content Engine</a>
+      </div>
+      <div class="price">
+        <p class="price-tier">The Authority Move</p>
+        <p class="price-title">10-Episode Library</p>
+        <p class="price-desc">Six months of content built once. Your back catalog becomes your entire online presence.</p>
+        <p class="price-orig">$10,500</p>
+        <p class="price-amount"><sup>$</sup>6,750</p>
+        <p class="price-save">You save $3,750 — 35% off</p>
+        <p class="price-delivery">In your hands: 8 weeks</p>
+        <ul class="price-list">
+          <li>300 posts — a complete content library</li>
+          <li>Evergreen SEO titles for YouTube &amp; LinkedIn</li>
+          <li>Personal brand positioning document</li>
+          <li>60-min strategy session with Fatama</li>
+        </ul>
+        <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn-ghost">Claim My Library</a>
+      </div>
+    </div>
+    <p class="prices-fine">Prices in USD · Payment plans available · Questions answered within 3–5 hours</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ VISION ═══════ -->
+<section class="rv">
+  <div class="wrap">
+    <p class="eyebrow">Six Months From Now</p>
+    <h2 class="h2">You Stop Being Discovered.<br><em>You Start Being Chosen.</em></h2>
+    <p class="lede">There's a version of your business where clients arrive pre-sold — they've watched your content for weeks and already decided you're the one. That version runs on distribution.</p>
+    <div class="vision-grid">
+      <div class="vis"><b>Inbound enquiries from strangers</b><p>"I've been following you everywhere and I need to work with you." Not from ads. Not from referrals. From content that found them.</p></div>
+      <div class="vis"><b>A list that grows while you sleep</b><p>7–20 new subscribers a day from LinkedIn, Instagram, YouTube, and search — pre-educated on your method before you say a word.</p></div>
+      <div class="vis"><b>A presence that matches your reputation</b><p>The gap between who you are in a room and who you appear to be online — closed. People finally see what your clients already know.</p></div>
+      <div class="vis"><b>Sundays that belong to you again</b><p>No captions to write. No clips to edit. You record when you have something to say — the system handles everything after.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ ABOUT ═══════ -->
+<section class="rv">
+  <div class="wrap about-grid">
+    <div class="about">
+      <p class="eyebrow">Who's Behind This</p>
+      <h2 class="h2">Voice-Matching Was My Job<br><em>Before AI Made It a Buzzword.</em></h2>
+      <p>I'm Fatama Zohora — conversion copywriter and content repurposing strategist. For eight years I've been turning clients' brain dumps, sales pages, and podcast episodes into content that sells — long before ChatGPT made "repurposing" a template.</p>
+      <p>My background in Anthropology gave me what most copywriters don't have: a framework for <em>why people believe what they believe</em>, and how narratives travel through communities. Every post I write is built on that — not just persuasion tactics.</p>
+      <p>Certified in 10x Web Copy™ and 10x Landing Pages™ through Copyhackers, trained under Jo Wiebe's method. I've written funnels, sales pages, and full repurposing systems for coaches, consultants, and agencies across three continents. The ICE8 Formula™ is the system I built from all of it.</p>
+    </div>
+    <div>
+      <div class="badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>10x Web Copy™</b><span>Copyhackers · Certified</span></div>
+      </div>
+      <div class="badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>10x Landing Pages™</b><span>Copyhackers · Certified</span></div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini"><b>8 yrs</b><span>Freelancing</span></div>
+        <div class="mini"><b>$1M</b><span>Client revenue</span></div>
+        <div class="mini"><b>4,100+</b><span>Leads generated</span></div>
+      </div>
+      <div class="secret">
+        <p>"She's my best kept secret. I try to hide her from the world but I just can't."</p>
+        <span>— Marketing agency client</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="rv">
+  <div class="wrap center">
+    <p class="eyebrow center">Straight Answers</p>
+    <h2 class="h2">The Questions You're <em>Actually Asking.</em></h2>
+  </div>
+  <div class="wrap">
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">Will it actually sound like me — or like a VA wrote it?<span class="arrow" aria-hidden="true">+</span></button><div class="faq-a">This is the question everyone asks, and the thing everyone's most surprised by. Before I write a single word, I study your episodes — your sentence structure, your vocabulary, the phrases you repeat, the jokes you make, the way you handle objections. The first batch comes with a voice-alignment revision built in. If it doesn't sound like you, we rewrite it — that's part of what you're paying for. The goal isn't content that sounds like content. It's content that sounds like the best version of you.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">Who are you and why should I trust you with my brand voice?<span class="arrow" aria-hidden="true">+</span></button><div class="faq-a">I'm Fatama — a copywriter and content strategist who got tired of watching brilliant podcast hosts stay invisible while average creators with louder distribution dominated their niches. I built the ICE8 Formula™ because I needed a system that wasn't just "repurposing" — it's strategic distribution rooted in audience psychology, mapped to the exact journey your ideal client takes before she's ready to buy. I only work with 1–2 clients at a time, because the quality of the output depends on how deeply I understand you.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">What do you actually need from me — and how much of my time does this take?<span class="arrow" aria-hidden="true">+</span></button><div class="faq-a">About 2 hours total. You fill in a 15-minute brand questionnaire. You send me your episode files (or just your RSS link). I do everything else — the research, the angles, the writing, the formatting, the platform optimisation. When I'm done, you review the batch, give me one round of feedback, and you're done. The review typically takes under 45 minutes, because the content is already close to what you'd write yourself.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">Can I use my older episodes — or does this only work with new content?<span class="arrow" aria-hidden="true">+</span></button><div class="faq-a">Your back catalog is where the best material lives. The ideas are more refined, the thinking is deeper, and most of your audience has never seen it. Many clients start with their five most popular older episodes, precisely because repurposing turns them into new content for people who never found them the first time. There's no expiry date on insight.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">How is this different from hiring a social media manager or a VA?<span class="arrow" aria-hidden="true">+</span></button><div class="faq-a">A social media manager creates new content and manages posting — typically $2,000–$4,000 a month, ongoing, forever. A VA can schedule, but rarely writes with strategic intent. What I do is different: I extract the intellectual value already inside your episodes and redistribute it in ways engineered to attract your ideal client — not just fill a calendar. You pay once per package. You own everything. The content keeps working long after delivery. It's an asset, not a subscription.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">What if I'm not happy with what you deliver?<span class="arrow" aria-hidden="true">+</span></button><div class="faq-a">Every package includes a revision round. If the content doesn't meet your standards after that, we keep going until it does. I only accept clients I'm confident I can serve well — that's what the questionnaire is for. If I don't think I can genuinely move the needle for you, I'll tell you before we start, not after.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FINAL CTA ═══════ -->
+<section class="band final">
+  <div class="wrap rv">
+    <p class="spots">1–2 clients a month · one spot open</p>
+    <h2 class="h2">Your Next 30 Days of Content<br><em>Are Already Recorded.</em></h2>
+    <p class="lede">The episodes exist. The insight is real. The only thing between your expertise and the audience it deserves is a distribution system — and that's what I build.</p>
+    <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener" class="btn">Book the Free Strategy Call</a>
+    <p class="note">15-min questionnaire → 30-min call → decision within 24 hours · No commitment on the call</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <a href="#" class="brand" aria-label="Repurpose & Rise home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M28.8 12.85 A14 14 0 1 0 37.2 21.2 L45 5.5" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/></svg>
+      <span class="wm">Repurpose &amp; Rise<sup>™</sup></span>
+    </a>
+    <div class="foot-links">
+      <a href="#method">Method</a>
+      <a href="#proof">Proof</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://calendly.com/copywriter-fatama/30min" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+    <p class="foot-note">© 2026 · Fatama Zohora · ICE8 Formula™ · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- scroll reveal ---------- */
+const rvEls=document.querySelectorAll('.rv');
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1});
+rvEls.forEach(el=>io.observe(el));
+
+/* ---------- count-up on reveal ---------- */
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cuEls=document.querySelectorAll('[data-count]');
+const cuIO=new IntersectionObserver((entries)=>{entries.forEach(e=>{
+  if(!e.isIntersecting)return;
+  cuIO.unobserve(e.target);
+  const el=e.target,target=parseInt(el.dataset.count,10),suffix=el.dataset.suffix||'';
+  if(reduceMotion){el.textContent=target.toLocaleString()+suffix;return}
+  const t0=performance.now(),dur=1100;
+  (function step(t){
+    const p=Math.min(1,(t-t0)/dur),eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*eased).toLocaleString()+(p===1?suffix:'');
+    if(p<1)requestAnimationFrame(step);
+  })(t0);
+})},{threshold:.5});
+cuEls.forEach(el=>cuIO.observe(el));
+
+/* ---------- FAQ accordion ---------- */
+function toggleFAQ(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+  if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
+}
+
+/* ---------- ROI calculator (math preserved exactly) ---------- */
+const cTiers=[
+  {label:'1-episode',cost:850,posts:30,delivery:'10 days',weeks:1.5,
+   items:['Voice-matched copy','Primary + 1 platform','Scheduling-ready'],
+   meterSub:'"I\'ve recorded the episode. I know it\'s good. And now it\'s just going to disappear into the feed."',
+   meters:[40,35,45],
+   quotes:['Your ideas are finally meeting strangers who need them — not just the audience already following you.','One episode alone can surface 1–2 new clients who found you through repurposed content.','You step into the influence your expertise deserves. The work starts reaching people who need it.'],
+   relief:'You stop carrying the weight of an episode that deserved more. The burden of "I should be posting" is replaced by "it\'s already out there, working." That\'s what this week feels like.'
+  },
+  {label:'5-episode',cost:3750,posts:150,delivery:'4 weeks',weeks:4,
+   items:['150 posts · 3 platforms','Content calendar','Email drafts included'],
+   meterSub:'"I have a year of brilliant episodes. None of them are working as hard as they should be."',
+   meters:[75,70,80],
+   quotes:['150 posts means your ideal client keeps seeing you everywhere. You become impossible to ignore.','At 2% conversion, this bundle pays for itself with a single new client — and you still have the content.','Your ideas compound into authority. People start knowing your name before they ever reach out.'],
+   relief:'You stop being the expert nobody outside your circle knows about. For the first time, your content volume matches your actual level of thinking. That shift — from invisible to inevitable — starts this week.'
+  },
+  {label:'10-episode',cost:6750,posts:300,delivery:'8 weeks',weeks:8,
+   items:['300 posts · 3 platforms','Brand positioning doc','Strategy session included'],
+   meterSub:'"I want to be the name people recognise — not the best-kept secret anymore."',
+   meters:[95,90,92],
+   quotes:['300 posts compounding across platforms — you\'re building an authority moat competitors can\'t cross.','Your pipeline stops depending on you showing up daily. It runs while you record, rest, or travel.','You become the go-to. The name that surfaces everywhere. The impact you always knew you could make.'],
+   relief:'You stop performing consistency and start embodying it. The relief isn\'t just emotional — it\'s structural. Your business now has a content engine that runs without you, and you can feel the difference in every week that follows.'
+  }
+];
+let cTier=0;
+function cFmt(n){return'$'+Math.round(n).toLocaleString()}
+function cSetTier(i){
+  cTier=i;
+  [0,1,2].forEach(n=>{
+    const tab=document.getElementById('ct'+n);
+    tab.classList.remove('ctab-active');
+    tab.setAttribute('aria-pressed','false');
+  });
+  const active=document.getElementById('ct'+i);
+  active.classList.add('ctab-active');
+  active.setAttribute('aria-pressed','true');
+  cCalc();
+}
+function cCalc(){
+  const rate=Math.max(50,parseFloat(document.getElementById('crate').value)||150);
+  const offer=Math.max(500,parseFloat(document.getElementById('coffer').value)||3000);
+  const hrs=parseFloat(document.getElementById('chrs').value)||10;
+  const conv=parseFloat(document.getElementById('cconv').value)/100||0.02;
+  const t=cTiers[cTier];
+  const hrsSaved=Math.round(hrs*t.weeks*4.3/4);
+  const timeVal=hrsSaved*rate;
+  const leadsBase=Math.round(t.posts*0.5);
+  const leadsLow=Math.round(leadsBase*0.7);
+  const leadsHigh=Math.round(leadsBase*1.3);
+  const buyersLow=Math.max(1,Math.round(leadsBase*0.005));
+  const buyersHigh=Math.max(1,Math.round(leadsBase*conv));
+  const revLow=buyersLow*offer;
+  const revHigh=buyersHigh*offer;
+  const netMid=timeVal+((revLow+revHigh)/2)-t.cost;
+  const roiMult=Math.round((netMid/t.cost)*10)/10;
+  const roi6hrs=Math.round(hrs*26);
+  const roi6leads=Math.round(leadsBase*6);
+  const roi6ltv=Math.round(roi6leads*conv*offer);
+  const roi6compound=Math.round(t.posts*(6/Math.max(1,t.weeks/4)));
+  document.getElementById('cs-posts').textContent=t.posts;
+  document.getElementById('cs-hrs').textContent=Math.round(hrsSaved)+'h';
+  document.getElementById('cs-hrs-r').textContent='across '+t.weeks+' weeks';
+  document.getElementById('cs-timeval').textContent=cFmt(timeVal);
+  document.getElementById('cs-leads').textContent=leadsBase.toLocaleString();
+  document.getElementById('cs-leads-r').textContent='est. range: '+leadsLow+'–'+leadsHigh;
+  document.getElementById('cs-buyers').textContent=buyersLow+'–'+buyersHigh;
+  document.getElementById('cs-buyers-r').textContent='at 0.5–'+(conv*100).toFixed(1)+'% conversion';
+  document.getElementById('cs-rev').textContent=cFmt(revLow)+'–'+cFmt(revHigh);
+  document.getElementById('cs-rev-r').textContent='conservative to your chosen rate';
+  document.getElementById('ctier-name').textContent=t.label;
+  document.getElementById('cmeter-sub').textContent=t.meterSub;
+  document.getElementById('cwyg-posts').textContent=t.posts+' posts ready to publish';
+  document.getElementById('cwyg-items').innerHTML=t.items.map(i=>`<span class="chip">${i}</span>`).join('');
+  [1,2,3].forEach((n,i)=>{
+    document.getElementById('cp'+n).textContent=t.meters[i]+'% lifted';
+    document.getElementById('cb'+n).style.width=t.meters[i]+'%';
+    document.getElementById('cq'+n).textContent='"'+t.quotes[i]+'"';
+  });
+  document.getElementById('crb-cost').textContent=cFmt(t.cost);
+  document.getElementById('crb-delivery').textContent=t.delivery;
+  document.getElementById('crb-posts').textContent=t.posts+' posts';
+  document.getElementById('crelief-stmt').textContent=t.relief;
+  document.getElementById('cr6-roi').textContent=cFmt(netMid);
+  document.getElementById('cr6-roipct').textContent=roiMult+'× your investment back';
+  document.getElementById('cr6-hrs').textContent=roi6hrs+' hours';
+  document.getElementById('cr6-hrssub').textContent='freed over 6 months = '+cFmt(roi6hrs*rate)+' back in your hands';
+  document.getElementById('cr6-ltv').textContent=roi6leads.toLocaleString()+' leads';
+  document.getElementById('cr6-ltvsub').textContent='lifetime value up to '+cFmt(roi6ltv)+' at '+(conv*100).toFixed(1)+'% conversion';
+  document.getElementById('cr6-compound').textContent=roi6compound+'+ posts';
+  document.getElementById('cr6-compoundsub').textContent='still ranking & finding new people after month 6';
+}
+cCalc();
+setTimeout(()=>{
+  [1,2,3].forEach(n=>{
+    const el=document.getElementById('cb'+n);
+    const w=el.style.width;
+    el.style.width='0%';
+    setTimeout(()=>{el.style.width=w},150);
+  });
+},300);
+</script>
+</body>
+</html>
